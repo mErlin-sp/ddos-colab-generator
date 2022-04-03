@@ -14,7 +14,7 @@ function generate(archive_count) {
     fetch('sunflower/sunflower.ipynb')
         .then(resp => resp.json())
         .then(data => {
-            let input_file = data.cells[0].source.toString()
+            let input_file = JSON.stringify(data)
             console.log(input_file)
 
             for (let archive = 1; archive <= archive_count; archive++) {
