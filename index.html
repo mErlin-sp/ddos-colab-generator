@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colab generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.js"
+            integrity="sha512-UNbeFrHORGTzMn3HTt00fvdojBYHLPxJbLChmtoyDwB6P9hX5mah3kMKm0HHNx/EvSPJt14b+SlD8xhuZ4w9Lg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.js"
+            integrity="sha512-NOmoi96WK3LK/lQDDRJmrobxa+NMwVzHHAaLfxdy0DRHIBc6GZ44CRlYDmAKzg9j7tvq3z+FGRlJ4g+3QC2qXg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="generator.js"></script>
+</head>
+<body>
+<div class="box">
+    <h2>Google Colaboratory DDOS Generator</h2>
+    <form>
+        <div id="slider" class="user-box">
+            <label for="archive-count"></label><input type="range" min="1" max="10" step="1" value="1" class="slider"
+                                                      id="archive-count"
+                                                      oninput="this.nextElementSibling.value = this.value">
+            <output style="color: white">1</output>
+        </div>
+        <!--        <div class="user-box">-->
+        <!--            <input type="text" name="" required="">-->
+        <!--            <label>Username</label>-->
+        <!--        </div>-->
+        <!--        <div class="user-box">-->
+        <!--            <input type="password" name="" required="">-->
+        <!--            <label>Password</label>-->
+        <!--        </div>-->
+        <a id="generate-button">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Generate
+        </a>
+    </form>
+</div>
+</body>
+</html>
