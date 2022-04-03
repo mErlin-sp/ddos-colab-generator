@@ -32,7 +32,7 @@ function generate(archive_count) {
 
                     const url_hash = btoa(`https://gitlab.com/white-sagittarius/sunflower/-/raw/main/sunflower.sh?salt=${id}`)
 
-                    let output_file = input_file.replaceAll(form_width_name, Math.floor(Math.random() * 5000).toString())
+                    let output_file = input_file.replaceAll(form_width_name, Math.floor(((Math.random() * 4999) + 5000)).toString())
                         .replaceAll(placeholder_name, id)
                         .replaceAll(hash_url_name, url_hash)
                     console.log(output_file)
