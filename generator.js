@@ -28,7 +28,13 @@ function generate(archive_count) {
                     const response = JSON.parse(xhttp.responseText)
                     const id = response[0] + '-' + response[1] + '-' + response[2] + '-' + response[3] + '-' + response[4]
 
-                    const output_file = input_file.replace('_replace_me_with_unique_name_in_latin_', id)
+                    const placeholder_name = "_id_", hash_url_name = "_url_", form_width_name = "_form_width_"
+
+                    const url_hash = btoa(`https://gitlab.com/white-sagittarius/sunflower/-/raw/main/sunflower.sh?salt=${id}`)
+
+                    let output_file = input_file.replaceAll(form_width_name, Math.floor(Math.random() * 5000).toString())
+                        .replaceAll(placeholder_name, id)
+                        .replaceAll(hash_url_name, url_hash)
                     console.log(output_file)
 
                     zip.file(id + '.ipynb', output_file)
