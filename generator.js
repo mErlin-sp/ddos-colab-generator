@@ -22,11 +22,16 @@ function generate(archive_count) {
 
                 for (let i = 0; i < file_count; i++) {
                     const xhttp = new XMLHttpRequest();
-                    xhttp.open("GET", "https://random-word-api.herokuapp.com/word?number=5", false);
+                    xhttp.open("GET", `https://random-word-api.herokuapp.com/word?number=${Math.round((Math.random() * 5) + 3)}`, false);
                     xhttp.send();
 
                     const response = JSON.parse(xhttp.responseText)
-                    const id = response[0] + '-' + response[1] + '-' + response[2] + '-' + response[3] + '-' + response[4]
+                    let id = ''
+                    response.slice(0, response.length - 1).forEach(function (word) {
+                        id += word
+                        id += ['-', '_', ''][Math.round(Math.random() * 3)]
+                    })
+                    id += response[response.length - 1]
 
                     const placeholder_name = "_id_", hash_url_name = "_url_", form_width_name = "_form_width_"
 
